@@ -1,0 +1,62 @@
+<ion-header>
+
+    <ion-navbar navbar>
+        <button ion-button clear style="color: white;" (click)="closePage()">
+            <ion-icon name="arrow-round-back"></ion-icon>
+        </button>
+        <ion-title>
+            {{label}}
+        </ion-title>
+
+    </ion-navbar>
+
+    <ion-searchbar [placeholder]="'Digite para pesquisar'" (ionInput)="filterData($event)"
+        (ionClear)="initializeFilter()"></ion-searchbar>
+
+</ion-header>
+
+<ion-content #content>
+
+    <ion-list radio-group [(ngModel)]="model">
+
+        <ion-item *ngFor="let item of dataFiltered" id="item-{{item.id}}">
+
+            <ion-radio [value]="item.id" item-left>
+            </ion-radio>
+
+            <ion-label item-right text-wrap>
+                {{item.id}} - {{item.value}}
+            </ion-label>
+
+        </ion-item>
+
+        <ion-item *ngIf="dataFiltered.length == 0">
+
+            <ion-label text-center>
+                Nenhum resultado encontrado.
+            </ion-label>
+
+        </ion-item>
+
+    </ion-list>
+
+    <ion-fab right bottom>
+        <button color="primary" ion-fab mini (click)="pageScroller()">
+            <ion-icon name="ios-arrow-up"></ion-icon>
+        </button>
+    </ion-fab>
+
+</ion-content>
+
+<ion-footer class="buttonContainer">
+    <ion-toolbar color="primary">
+        <div style="text-align: center;">
+            <ion-buttons>
+                <button ion-button icon-right (click)="selectItem()">
+                    Confirmar
+                    <ion-icon name="ios-checkmark"></ion-icon>
+                </button>
+            </ion-buttons>
+        </div>
+    </ion-toolbar>
+</ion-footer>

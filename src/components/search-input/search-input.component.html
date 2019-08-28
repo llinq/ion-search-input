@@ -1,0 +1,23 @@
+<ion-list>
+
+  <ion-item class="item-input" (click)="openFilter()">
+
+    <ion-label stacked>
+      {{label}}
+    </ion-label>
+
+    <ion-label style="color: #999;" *ngIf="!itemSelected" text-wrap>
+      Clique para pesquisar
+    </ion-label>
+
+    <ion-label *ngIf="itemSelected" text-wrap>
+      {{itemSelected}}
+    </ion-label>
+
+    <button ion-button color="primary" type="button" item-right class="icon-btn">
+      <ion-icon name="search" *ngIf="!itemSelected"></ion-icon>
+      <ion-icon name="create" *ngIf="itemSelected"></ion-icon>
+    </button>
+  </ion-item>
+
+</ion-list>

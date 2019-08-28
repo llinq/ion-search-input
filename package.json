@@ -1,0 +1,37 @@
+{
+  "name": "ion-search-input",
+  "version": "0.0.1",
+  "description": "A simple ionic search component that renders an input to display the value as well as a search page.",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "ngc": "ngc",
+    "build": "rd dist /q /s && npm run ngc",
+    "publishPackage": "npm run build && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/llinq/ion-search-input"
+  },
+  "keywords": [],
+  "author": "João Costa",
+  "license": "MIT",
+  "homepage": "https://ionicframework.com/docs/v3/",
+  "devDependencies": {
+    "@angular/common": "5.0.3",
+    "@angular/compiler": "5.0.3",
+    "@angular/compiler-cli": "5.0.3",
+    "@angular/core": "5.0.3",
+    "@angular/forms": "^5.2.7",
+    "@angular/platform-browser": "5.0.3",
+    "@angular/platform-browser-dynamic": "5.0.3",
+    "@types/node": "^9.4.6",
+    "ionic-angular": "3.9.2",
+    "rxjs": "5.5.2",
+    "typescript": "2.4.2",
+    "zone.js": "0.8.18"
+  }
+}
