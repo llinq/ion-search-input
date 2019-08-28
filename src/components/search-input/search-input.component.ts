@@ -3,9 +3,48 @@ import { ModalController } from 'ionic-angular/components/modal/modal-controller
 import { SearchScreenComponent } from '../search-screen/search-screen.component';
 import { KeyValue } from '../../models/keyValue';
 
+const HTML_TEMPLATE = `
+<ion-list>
+
+  <ion-item class="item-input" (click)="openFilter()">
+
+    <ion-label stacked>
+      {{label}}
+    </ion-label>
+
+    <ion-label style="color: #999;" *ngIf="!itemSelected" text-wrap>
+      Clique para pesquisar
+    </ion-label>
+
+    <ion-label *ngIf="itemSelected" text-wrap>
+      {{itemSelected}}
+    </ion-label>
+
+    <button ion-button color="primary" type="button" item-right class="icon-btn">
+      <ion-icon name="search" *ngIf="!itemSelected"></ion-icon>
+      <ion-icon name="create" *ngIf="itemSelected"></ion-icon>
+    </button>
+  </ion-item>
+
+</ion-list>
+`;
+ 
+const CSS_STYLE = `
+    search-input > .icon-btn {
+        margin-bottom: 0px !important;
+        margin-top: 0px !important;
+        position: absolute;
+        right: 0;
+        bottom: 13px;
+        padding-bottom: 0px !important;
+        padding-top: 0px !important;
+}
+`;
+
 @Component({
-    selector: 'search-input',
-    templateUrl: 'search-input.component.html'
+    selector: 'ion-search-input',
+    template: HTML_TEMPLATE,
+    styles: [CSS_STYLE]
 })
 export class SearchInputComponent implements OnInit {
 
