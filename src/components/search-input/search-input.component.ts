@@ -13,7 +13,7 @@ const HTML_TEMPLATE = `
     </ion-label>
 
     <ion-label style="color: #999;" *ngIf="!itemSelected" text-wrap>
-      Clique para pesquisar
+        {{placeholder}}
     </ion-label>
 
     <ion-label *ngIf="itemSelected" text-wrap>
@@ -28,7 +28,7 @@ const HTML_TEMPLATE = `
 
 </ion-list>
 `;
- 
+
 const CSS_STYLE = `
     .icon-btn {
         margin-bottom: 0px !important;
@@ -38,6 +38,10 @@ const CSS_STYLE = `
         bottom: 13px;
         padding-bottom: 0px !important;
         padding-top: 0px !important;
+    }
+
+    ion-item {
+        padding-left: 0px !important;
     }
 `;
 
@@ -52,6 +56,7 @@ export class SearchInputComponent implements OnInit {
     @Input('mock') mock: boolean;
     @Input('data') data: KeyValue[];
     @Input('model') model: number;
+    @Input('placeholder') placeholder: string;
 
     @Output('selectedEvent') selectedEvent = new EventEmitter();
 
@@ -69,6 +74,10 @@ export class SearchInputComponent implements OnInit {
         if (this.model) {
             this.selectItem(this.model);
         }
+
+        if (!this.placeholder) {
+            this.placeholder = 'Click to search';
+        }
     }
 
     openFilter() {
@@ -76,7 +85,8 @@ export class SearchInputComponent implements OnInit {
             {
                 data: this.data,
                 selected: this.model,
-                label: this.label
+                label: this.label,
+                placeholder: this.placeholder
             },
             {
                 showBackdrop: false
@@ -101,7 +111,7 @@ export class SearchInputComponent implements OnInit {
         }
         else {
             setTimeout(() => {
-                this.selectItem(id);   
+                this.selectItem(id);
             });
         }
     }

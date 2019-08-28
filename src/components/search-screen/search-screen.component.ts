@@ -15,7 +15,7 @@ const HTML_TEMPLATE = `
 
     </ion-navbar>
 
-    <ion-searchbar [placeholder]="'Digite para pesquisar'" (ionInput)="filterData($event)"
+    <ion-searchbar [placeholder]="placeholder" (ionInput)="filterData($event)"
         (ionClear)="initializeFilter()"></ion-searchbar>
 
 </ion-header>
@@ -38,7 +38,7 @@ const HTML_TEMPLATE = `
         <ion-item *ngIf="dataFiltered.length == 0">
 
             <ion-label text-center>
-                Nenhum resultado encontrado.
+                No results found.
             </ion-label>
 
         </ion-item>
@@ -58,8 +58,8 @@ const HTML_TEMPLATE = `
         <div style="text-align: center;">
             <ion-buttons>
                 <button ion-button icon-right (click)="selectItem()">
-                    Confirmar
                     <ion-icon name="ios-checkmark"></ion-icon>
+                    Save
                 </button>
             </ion-buttons>
         </div>
@@ -101,6 +101,7 @@ export class SearchScreenComponent {
     data: KeyValue[];
     selected?: number;
     label: string;
+    placeholder: string;
 
     constructor(
         private viewCtrl: ViewController,
@@ -109,6 +110,7 @@ export class SearchScreenComponent {
         this.data = this.navParams.get('data');
         this.selected = this.navParams.get('selected');
         this.label = this.navParams.get('label');
+        this.placeholder = this.navParams.get('placeholder');
 
         if (this.selected) {
             this.model = this.selected;
