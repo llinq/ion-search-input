@@ -6,7 +6,7 @@ const HTML_TEMPLATE = `
 <ion-header>
 
     <ion-navbar navbar>
-        <button ion-button clear style="color: white;" (click)="closePage()">
+        <button ion-button clear (click)="closePage()">
             <ion-icon name="arrow-round-back"></ion-icon>
         </button>
         <ion-title>
@@ -68,30 +68,22 @@ const HTML_TEMPLATE = `
 `;
 
 const CSS_STYLE = `
-search-screen {
+input {
+    margin-left: 0px !important;
+}
 
-    input {
-        margin-left: 0px !important;
-    }
+ion-navbar button {
+    z-index: 9999999999 !important;
+}
 
-    
-    ion-navbar {
-
-        button {
-            z-index: 9999999999 !important;
-        }
-
-        ion-title {
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 0 90px 1px;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-          }
-    }
-
+ion-navbar ion-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 90px 1px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
 }
 `;
 

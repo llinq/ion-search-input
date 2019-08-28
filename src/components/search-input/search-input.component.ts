@@ -30,7 +30,7 @@ const HTML_TEMPLATE = `
 `;
  
 const CSS_STYLE = `
-    search-input > .icon-btn {
+    .icon-btn {
         margin-bottom: 0px !important;
         margin-top: 0px !important;
         position: absolute;
@@ -38,7 +38,7 @@ const CSS_STYLE = `
         bottom: 13px;
         padding-bottom: 0px !important;
         padding-top: 0px !important;
-}
+    }
 `;
 
 @Component({

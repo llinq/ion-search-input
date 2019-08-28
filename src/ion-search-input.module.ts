@@ -17,6 +17,9 @@ import { SearchInputComponent } from './components/search-input/search-input.com
         // export the component(s) that you want others to be able to use
         SearchInputComponent,
         SearchScreenComponent
+    ],
+    entryComponents: [
+        SearchScreenComponent
     ]
 })
 export class IonSearchInputModule {
