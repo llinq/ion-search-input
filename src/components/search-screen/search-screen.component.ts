@@ -58,7 +58,6 @@ const HTML_TEMPLATE = `
         <div style="text-align: center;">
             <ion-buttons>
                 <button ion-button icon-right (click)="selectItem()">
-                    <ion-icon name="ios-checkmark"></ion-icon>
                     Save
                 </button>
             </ion-buttons>
