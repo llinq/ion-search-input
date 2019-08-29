@@ -36,4 +36,10 @@ export class AppModule {}
 | ------------ | ------------ |
 | selectedEvent | Event triggered when selecting a radio and clicking the save button. The `id` of the selected option is sent. |
 
+### Screenshots
+<img src="https://i.ibb.co/FBxXrW3/localhost-8100.png" width="150" />
+<img src="https://i.ibb.co/L8GVrCy/localhost-8100-1.png" width="150" />
+<img src="https://i.ibb.co/sg7C9fm/localhost-8100-2.png" width="150" />
+<img src="https://i.ibb.co/MghwhGj/localhost-8100-3.png" width="150" />
+
 
