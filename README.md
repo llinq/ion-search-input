@@ -1,3 +1,5 @@
+[DEPRECATED]
+
 # ion-search-input
 A simple ionic search component that renders an input to display the value as well as a search page.
 
@@ -41,5 +43,6 @@ export class AppModule {}
 <img src="https://i.ibb.co/L8GVrCy/localhost-8100-1.png" width="150" />
 <img src="https://i.ibb.co/sg7C9fm/localhost-8100-2.png" width="150" />
 <img src="https://i.ibb.co/MghwhGj/localhost-8100-3.png" width="150" />
+
 
 
